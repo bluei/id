@@ -1,0 +1,874 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="ApplicationDataStore" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2005" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityContainer Name="ApplicationDataStore">
+    <EntitySet Name="Companies" EntityType="ApplicationDataStore.Company" store:Type="Tables" Schema="dbo" Table="Companies" />
+    <EntitySet Name="Contacts" EntityType="ApplicationDataStore.Contact" store:Type="Tables" Schema="dbo" Table="Contacts" />
+    <EntitySet Name="ProductTypes" EntityType="ApplicationDataStore.ProductType" store:Type="Tables" Schema="dbo" Table="ProductTypes" />
+    <EntitySet Name="Products" EntityType="ApplicationDataStore.Product" store:Type="Tables" Schema="dbo" Table="Products" />
+    <EntitySet Name="BillOfMaterials" EntityType="ApplicationDataStore.BillOfMaterial" store:Type="Tables" Schema="dbo" Table="BillOfMaterials" />
+    <EntitySet Name="JobStatuses" EntityType="ApplicationDataStore.JobStatus" store:Type="Tables" Schema="dbo" Table="JobStatuses" />
+    <EntitySet Name="Jobs" EntityType="ApplicationDataStore.Job" store:Type="Tables" Schema="dbo" Table="Jobs" />
+    <EntitySet Name="PurchaseOrders" EntityType="ApplicationDataStore.PurchaseOrder" store:Type="Tables" Schema="dbo" Table="PurchaseOrders" />
+    <EntitySet Name="JobMasterBOMs" EntityType="ApplicationDataStore.JobMasterBOM" store:Type="Tables" Schema="dbo" Table="JobMasterBOMs" />
+    <EntitySet Name="JobMasterBOMItems" EntityType="ApplicationDataStore.JobMasterBOMItem" store:Type="Tables" Schema="dbo" Table="JobMasterBOMItems" />
+    <EntitySet Name="PurchaseOrderLines" EntityType="ApplicationDataStore.PurchaseOrderLine" store:Type="Tables" Schema="dbo" Table="PurchaseOrderLines" />
+    <EntitySet Name="Messages" EntityType="ApplicationDataStore.Message" store:Type="Tables" Schema="dbo" Table="Messages" />
+    <EntitySet Name="Units" EntityType="ApplicationDataStore.Unit" store:Type="Tables" Schema="dbo" Table="Units" />
+    <EntitySet Name="Receipts" EntityType="ApplicationDataStore.Receipt" store:Type="Tables" Schema="dbo" Table="Receipts" />
+    <EntitySet Name="PurchaseOrderStatuses" EntityType="ApplicationDataStore.PurchaseOrderStatus" store:Type="Tables" Schema="dbo" Table="PurchaseOrderStatuses" />
+    <EntitySet Name="AppSettings" EntityType="ApplicationDataStore.AppSetting" store:Type="Tables" Schema="dbo" Table="AppSettings" />
+    <EntitySet Name="ProductCostRecords" EntityType="ApplicationDataStore.ProductCostRecord" store:Type="Tables" Schema="dbo" Table="ProductCostRecords" />
+    <EntitySet Name="ProductGroups" EntityType="ApplicationDataStore.ProductGroup" store:Type="Tables" Schema="dbo" Table="ProductGroups" />
+    <EntitySet Name="Releases" EntityType="ApplicationDataStore.Release" store:Type="Tables" Schema="dbo" Table="Releases" />
+    <EntitySet Name="ReleaseIssues" EntityType="ApplicationDataStore.ReleaseIssue" store:Type="Tables" Schema="dbo" Table="ReleaseIssues" />
+    <EntitySet Name="Terms" EntityType="ApplicationDataStore.Term" store:Type="Tables" Schema="dbo" Table="Terms" />
+    <EntitySet Name="Explosions" EntityType="ApplicationDataStore.Explosion" store:Type="Tables" Schema="dbo" Table="Explosions" />
+    <EntitySet Name="InvoiceStatuses" EntityType="ApplicationDataStore.InvoiceStatus" store:Type="Tables" Schema="dbo" Table="InvoiceStatuses" />
+    <EntitySet Name="Invoices" EntityType="ApplicationDataStore.Invoice" store:Type="Tables" Schema="dbo" Table="Invoices" />
+    <AssociationSet Name="Contact_Company" Association="ApplicationDataStore.Contact_Company">
+      <End Role="Company" EntitySet="Companies" />
+      <End Role="Contact" EntitySet="Contacts" />
+    </AssociationSet>
+    <AssociationSet Name="Product_ProductType" Association="ApplicationDataStore.Product_ProductType">
+      <End Role="ProductType" EntitySet="ProductTypes" />
+      <End Role="Product" EntitySet="Products" />
+    </AssociationSet>
+    <AssociationSet Name="ProductAssemblyID" Association="ApplicationDataStore.ProductAssemblyID">
+      <End Role="Product" EntitySet="Products" />
+      <End Role="BillOfMaterial" EntitySet="BillOfMaterials" />
+    </AssociationSet>
+    <AssociationSet Name="ComponentID" Association="ApplicationDataStore.ComponentID">
+      <End Role="Product" EntitySet="Products" />
+      <End Role="BillOfMaterial" EntitySet="BillOfMaterials" />
+    </AssociationSet>
+    <AssociationSet Name="Product_Company" Association="ApplicationDataStore.Product_Company">
+      <End Role="Company" EntitySet="Companies" />
+      <End Role="Product" EntitySet="Products" />
+    </AssociationSet>
+    <AssociationSet Name="Job_Company" Association="ApplicationDataStore.Job_Company">
+      <End Role="Company" EntitySet="Companies" />
+      <End Role="Job" EntitySet="Jobs" />
+    </AssociationSet>
+    <AssociationSet Name="Job_JobStatus" Association="ApplicationDataStore.Job_JobStatus">
+      <End Role="JobStatus" EntitySet="JobStatuses" />
+      <End Role="Job" EntitySet="Jobs" />
+    </AssociationSet>
+    <AssociationSet Name="Job_Contact" Association="ApplicationDataStore.Job_Contact">
+      <End Role="Contact" EntitySet="Contacts" />
+      <End Role="Job" EntitySet="Jobs" />
+    </AssociationSet>
+    <AssociationSet Name="PurchaseOrder_Company" Association="ApplicationDataStore.PurchaseOrder_Company">
+      <End Role="Company" EntitySet="Companies" />
+      <End Role="PurchaseOrder" EntitySet="PurchaseOrders" />
+    </AssociationSet>
+    <AssociationSet Name="PurchaseOrder_Job" Association="ApplicationDataStore.PurchaseOrder_Job">
+      <End Role="Job" EntitySet="Jobs" />
+      <End Role="PurchaseOrder" EntitySet="PurchaseOrders" />
+    </AssociationSet>
+    <AssociationSet Name="JobMasterBOM_Product" Association="ApplicationDataStore.JobMasterBOM_Product">
+      <End Role="Product" EntitySet="Products" />
+      <End Role="JobMasterBOM" EntitySet="JobMasterBOMs" />
+    </AssociationSet>
+    <AssociationSet Name="JobMasterBOM_Job" Association="ApplicationDataStore.JobMasterBOM_Job">
+      <End Role="Job" EntitySet="Jobs" />
+      <End Role="JobMasterBOM" EntitySet="JobMasterBOMs" />
+    </AssociationSet>
+    <AssociationSet Name="JobMasterBOMItem_Product" Association="ApplicationDataStore.JobMasterBOMItem_Product">
+      <End Role="Product" EntitySet="Products" />
+      <End Role="JobMasterBOMItem" EntitySet="JobMasterBOMItems" />
+    </AssociationSet>
+    <AssociationSet Name="JobMasterBOMItem_JobMasterBOM" Association="ApplicationDataStore.JobMasterBOMItem_JobMasterBOM">
+      <End Role="JobMasterBOM" EntitySet="JobMasterBOMs" />
+      <End Role="JobMasterBOMItem" EntitySet="JobMasterBOMItems" />
+    </AssociationSet>
+    <AssociationSet Name="PurchaseOrderLine_PurchaseOrder" Association="ApplicationDataStore.PurchaseOrderLine_PurchaseOrder">
+      <End Role="PurchaseOrder" EntitySet="PurchaseOrders" />
+      <End Role="PurchaseOrderLine" EntitySet="PurchaseOrderLines" />
+    </AssociationSet>
+    <AssociationSet Name="PurchaseOrderLine_Product" Association="ApplicationDataStore.PurchaseOrderLine_Product">
+      <End Role="Product" EntitySet="Products" />
+      <End Role="PurchaseOrderLine" EntitySet="PurchaseOrderLines" />
+    </AssociationSet>
+    <AssociationSet Name="Unit_Product" Association="ApplicationDataStore.Unit_Product">
+      <End Role="Unit" EntitySet="Units" />
+      <End Role="Product" EntitySet="Products" />
+    </AssociationSet>
+    <AssociationSet Name="Receipt_PurchaseOrderLine" Association="ApplicationDataStore.Receipt_PurchaseOrderLine">
+      <End Role="PurchaseOrderLine" EntitySet="PurchaseOrderLines" />
+      <End Role="Receipt" EntitySet="Receipts" />
+    </AssociationSet>
+    <AssociationSet Name="PurchaseOrder_PurchaseOrderStatus" Association="ApplicationDataStore.PurchaseOrder_PurchaseOrderStatus">
+      <End Role="PurchaseOrderStatus" EntitySet="PurchaseOrderStatuses" />
+      <End Role="PurchaseOrder" EntitySet="PurchaseOrders" />
+    </AssociationSet>
+    <AssociationSet Name="JobMasterBOMItem_PurchaseOrderStatus" Association="ApplicationDataStore.JobMasterBOMItem_PurchaseOrderStatus">
+      <End Role="PurchaseOrderStatus" EntitySet="PurchaseOrderStatuses" />
+      <End Role="JobMasterBOMItem" EntitySet="JobMasterBOMItems" />
+    </AssociationSet>
+    <AssociationSet Name="JobMasterBOMItem_Company" Association="ApplicationDataStore.JobMasterBOMItem_Company">
+      <End Role="Company" EntitySet="Companies" />
+      <End Role="JobMasterBOMItem" EntitySet="JobMasterBOMItems" />
+    </AssociationSet>
+    <AssociationSet Name="ProductCostRecord_Product" Association="ApplicationDataStore.ProductCostRecord_Product">
+      <End Role="Product" EntitySet="Products" />
+      <End Role="ProductCostRecord" EntitySet="ProductCostRecords" />
+    </AssociationSet>
+    <AssociationSet Name="Message_Job" Association="ApplicationDataStore.Message_Job">
+      <End Role="Job" EntitySet="Jobs" />
+      <End Role="Message" EntitySet="Messages" />
+    </AssociationSet>
+    <AssociationSet Name="Product_ProductGroup" Association="ApplicationDataStore.Product_ProductGroup">
+      <End Role="ProductGroup" EntitySet="ProductGroups" />
+      <End Role="Product" EntitySet="Products" />
+    </AssociationSet>
+    <AssociationSet Name="ReleaseIssue_Release" Association="ApplicationDataStore.ReleaseIssue_Release">
+      <End Role="Release" EntitySet="Releases" />
+      <End Role="ReleaseIssue" EntitySet="ReleaseIssues" />
+    </AssociationSet>
+    <AssociationSet Name="Job_Contact1" Association="ApplicationDataStore.Job_Contact1">
+      <End Role="Contact" EntitySet="Contacts" />
+      <End Role="Job" EntitySet="Jobs" />
+    </AssociationSet>
+    <AssociationSet Name="PurchaseOrder_Contact" Association="ApplicationDataStore.PurchaseOrder_Contact">
+      <End Role="Contact" EntitySet="Contacts" />
+      <End Role="PurchaseOrder" EntitySet="PurchaseOrders" />
+    </AssociationSet>
+    <AssociationSet Name="Term_Job" Association="ApplicationDataStore.Term_Job">
+      <End Role="Term" EntitySet="Terms" />
+      <End Role="Job" EntitySet="Jobs" />
+    </AssociationSet>
+    <AssociationSet Name="Invoice_InvoiceStatus" Association="ApplicationDataStore.Invoice_InvoiceStatus">
+      <End Role="InvoiceStatus" EntitySet="InvoiceStatuses" />
+      <End Role="Invoice" EntitySet="Invoices" />
+    </AssociationSet>
+    <AssociationSet Name="Invoice_Job" Association="ApplicationDataStore.Invoice_Job">
+      <End Role="Job" EntitySet="Jobs" />
+      <End Role="Invoice" EntitySet="Invoices" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Company">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="CompanyType" Type="nvarchar" Nullable="false" MaxLength="1" />
+    <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="250" />
+    <Property Name="Address1" Type="nvarchar" MaxLength="255" />
+    <Property Name="Address2" Type="nvarchar" MaxLength="255" />
+    <Property Name="City" Type="nvarchar" MaxLength="50" />
+    <Property Name="State" Type="nvarchar" MaxLength="20" />
+    <Property Name="Country" Type="nvarchar" MaxLength="50" />
+    <Property Name="Zip" Type="nvarchar" MaxLength="20" />
+    <Property Name="Phone" Type="nvarchar" MaxLength="20" />
+    <Property Name="Fax" Type="nvarchar" MaxLength="20" />
+    <Property Name="Website" Type="nvarchar" MaxLength="255" />
+    <Property Name="LegacyVendorId" Type="int" />
+    <Property Name="LegacyRepId" Type="int" />
+    <Property Name="LegacyCompanyId" Type="int" />
+    <Property Name="NextJobNumber" Type="int" />
+    <Property Name="DefaultRepCommission" Type="decimal" Precision="18" Scale="9" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="255" />
+    <Property Name="DefaultLeadDays" Type="int" />
+    <Property Name="RowVersion" Type="rowversion" Nullable="false" StoreGeneratedPattern="Computed" />
+    <Property Name="Notes" Type="nvarchar" MaxLength="1000" />
+  </EntityType>
+  <EntityType Name="Contact">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="FirstName" Type="nvarchar" MaxLength="255" />
+    <Property Name="LastName" Type="nvarchar" MaxLength="255" />
+    <Property Name="Position" Type="nvarchar" MaxLength="255" />
+    <Property Name="WorkPhone" Type="nvarchar" MaxLength="20" />
+    <Property Name="MobilePhone" Type="nvarchar" MaxLength="20" />
+    <Property Name="Fax" Type="nvarchar" MaxLength="20" />
+    <Property Name="Email" Type="nvarchar" MaxLength="255" />
+    <Property Name="Notes" Type="nvarchar" MaxLength="500" />
+    <Property Name="IsPrimary" Type="int" />
+    <Property Name="RowVersion" Type="rowversion" Nullable="false" StoreGeneratedPattern="Computed" />
+    <Property Name="Contact_Company" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ProductType">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Code" Type="nvarchar" Nullable="false" MaxLength="1" />
+    <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="20" />
+    <Property Name="NextNumber" Type="int" Nullable="false" />
+    <Property Name="Description" Type="nvarchar" MaxLength="255" />
+    <Property Name="CanHaveBOM" Type="bit" Nullable="false" />
+    <Property Name="RowVersion" Type="rowversion" Nullable="false" StoreGeneratedPattern="Computed" />
+  </EntityType>
+  <EntityType Name="Product">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="PartNumber" Type="nvarchar" Nullable="false" MaxLength="20" />
+    <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="500" />
+    <Property Name="StandardCost" Type="decimal" Nullable="false" Precision="18" Scale="2" />
+    <Property Name="ModifiedDate" Type="datetime" />
+    <Property Name="ModifiedBy" Type="nvarchar" MaxLength="100" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="100" />
+    <Property Name="DefaultLeadDays" Type="int" />
+    <Property Name="DrawingNo" Type="nvarchar" MaxLength="255" />
+    <Property Name="Photo" Type="varbinary(max)" />
+    <Property Name="Notes" Type="nvarchar" MaxLength="500" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+    <Property Name="RowVersion" Type="rowversion" Nullable="false" StoreGeneratedPattern="Computed" />
+    <Property Name="Product_ProductType" Type="int" Nullable="false" />
+    <Property Name="Product_Company" Type="int" />
+    <Property Name="Unit_Product" Type="int" Nullable="false" />
+    <Property Name="Product_ProductGroup" Type="int" />
+  </EntityType>
+  <EntityType Name="BillOfMaterial">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="ModifiedDate" Type="datetime" />
+    <Property Name="PerAssemblyQty" Type="decimal" Nullable="false" Precision="8" Scale="2" />
+    <Property Name="ModifiedBy" Type="nvarchar" MaxLength="100" />
+    <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+    <Property Name="CreatedBy" Type="nvarchar" Nullable="false" MaxLength="255" />
+    <Property Name="RowVersion" Type="rowversion" Nullable="false" StoreGeneratedPattern="Computed" />
+    <Property Name="ProductAssemblyID" Type="int" Nullable="false" />
+    <Property Name="ComponentID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="JobStatus">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Status" Type="nvarchar" Nullable="false" MaxLength="20" />
+    <Property Name="Sort" Type="int" Nullable="false" />
+    <Property Name="RowVersion" Type="rowversion" Nullable="false" StoreGeneratedPattern="Computed" />
+    <Property Name="ShowOnHome" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Job">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="JobNumber" Type="nvarchar" Nullable="false" MaxLength="255" />
+    <Property Name="JobName" Type="nvarchar" Nullable="false" MaxLength="255" />
+    <Property Name="DateSold" Type="datetime" />
+    <Property Name="DateRequested" Type="datetime" />
+    <Property Name="DatePromised" Type="datetime" />
+    <Property Name="DateShipped" Type="datetime" />
+    <Property Name="SalesRepCommission" Type="decimal" Precision="18" Scale="9" />
+    <Property Name="CustomerPO" Type="nvarchar" MaxLength="50" />
+    <Property Name="LegacyCustomerNo" Type="int" />
+    <Property Name="LegacyAssemblyNo" Type="nvarchar" MaxLength="20" />
+    <Property Name="LegacyElectricalNo" Type="nvarchar" MaxLength="20" />
+    <Property Name="NextPoNumber" Type="int" Nullable="false" />
+    <Property Name="JobNotes" Type="nvarchar" MaxLength="2000" />
+    <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+    <Property Name="CreatedBy" Type="nvarchar" Nullable="false" MaxLength="255" />
+    <Property Name="ModifiedDate" Type="datetime" Nullable="false" />
+    <Property Name="ModifiedBy" Type="nvarchar" Nullable="false" MaxLength="255" />
+    <Property Name="RowVersion" Type="rowversion" Nullable="false" StoreGeneratedPattern="Computed" />
+    <Property Name="Job_Company" Type="int" Nullable="false" />
+    <Property Name="Job_JobStatus" Type="int" Nullable="false" />
+    <Property Name="Job_Contact" Type="int" />
+    <Property Name="Job_Contact1" Type="int" />
+    <Property Name="Term_Job" Type="int" />
+  </EntityType>
+  <EntityType Name="PurchaseOrder">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Number" Type="nvarchar" Nullable="false" MaxLength="255" />
+    <Property Name="POCreatedDate" Type="datetime" Nullable="false" />
+    <Property Name="CreatedBy" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="DateDue" Type="datetime" />
+    <Property Name="DateOrdered" Type="datetime" />
+    <Property Name="DateClosed" Type="datetime" />
+    <Property Name="OrderedBy" Type="nvarchar" MaxLength="100" />
+    <Property Name="InternalNote" Type="nvarchar" MaxLength="1000" />
+    <Property Name="FooterNote" Type="nvarchar" MaxLength="1000" />
+    <Property Name="RowVersion" Type="rowversion" Nullable="false" StoreGeneratedPattern="Computed" />
+    <Property Name="PurchaseOrder_Company" Type="int" Nullable="false" />
+    <Property Name="PurchaseOrder_Job" Type="int" />
+    <Property Name="PurchaseOrder_PurchaseOrderStatus" Type="int" Nullable="false" />
+    <Property Name="PurchaseOrder_Contact" Type="int" />
+  </EntityType>
+  <EntityType Name="JobMasterBOM">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Price" Type="decimal" Nullable="false" Precision="18" Scale="2" />
+    <Property Name="RowVersion" Type="rowversion" Nullable="false" StoreGeneratedPattern="Computed" />
+    <Property Name="JobOrder_Product" Type="int" Nullable="false" />
+    <Property Name="JobOrder_Job" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="JobMasterBOMItem">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="IdPath" Type="nvarchar" MaxLength="255" />
+    <Property Name="PartsPath" Type="nvarchar" MaxLength="255" />
+    <Property Name="Depth" Type="int" />
+    <Property Name="Level" Type="nvarchar" MaxLength="255" />
+    <Property Name="ProductNotes" Type="nvarchar" MaxLength="255" />
+    <Property Name="PerAssemblyQty" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="PerAssemblyQtyRegenerated" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="UnitCost" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="ExtendedQty" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="ExtendedQtyRegenerated" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="IsDeletedInBOM" Type="bit" Nullable="false" />
+    <Property Name="POLineId" Type="int" />
+    <Property Name="Note" Type="nvarchar" MaxLength="1000" />
+    <Property Name="RefNo" Type="nvarchar" MaxLength="20" />
+    <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+    <Property Name="Processed" Type="bit" Nullable="false" />
+    <Property Name="RowVersion" Type="rowversion" Nullable="false" StoreGeneratedPattern="Computed" />
+    <Property Name="JobOrderPart_Product" Type="int" Nullable="false" />
+    <Property Name="JobOrderPart_JobOrder" Type="int" Nullable="false" />
+    <Property Name="JobMasterBOMItem_PurchaseOrderStatus" Type="int" Nullable="false" />
+    <Property Name="JobMasterBOMItem_Company" Type="int" />
+  </EntityType>
+  <EntityType Name="PurchaseOrderLine">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="JobMasterBOMItemId" Type="int" />
+    <Property Name="OrderQty" Type="decimal" Nullable="false" Precision="18" Scale="2" />
+    <Property Name="VendorPartNo" Type="nvarchar" MaxLength="25" />
+    <Property Name="LineNotes" Type="nvarchar" MaxLength="1000" />
+    <Property Name="IsComplete" Type="bit" Nullable="false" />
+    <Property Name="Price" Type="decimal" Nullable="false" Precision="18" Scale="2" />
+    <Property Name="RowVersion" Type="rowversion" Nullable="false" StoreGeneratedPattern="Computed" />
+    <Property Name="PurchaseOrderLine_PurchaseOrder" Type="int" Nullable="false" />
+    <Property Name="PurchaseOrderLine_Product" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Message">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Topic" Type="nvarchar" Nullable="false" MaxLength="1000" />
+    <Property Name="Note" Type="nvarchar" MaxLength="1000" />
+    <Property Name="Created" Type="datetime" />
+    <Property Name="Acknowledged" Type="bit" Nullable="false" />
+    <Property Name="Priority" Type="int" Nullable="false" />
+    <Property Name="RowVersion" Type="rowversion" Nullable="false" StoreGeneratedPattern="Computed" />
+    <Property Name="Message_Job" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Unit">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="UnitOfMeasure" Type="nvarchar" Nullable="false" MaxLength="20" />
+    <Property Name="UnitCode" Type="nvarchar" Nullable="false" MaxLength="10" />
+    <Property Name="RowVersion" Type="rowversion" Nullable="false" StoreGeneratedPattern="Computed" />
+  </EntityType>
+  <EntityType Name="Receipt">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="ReceivedDate" Type="datetime" Nullable="false" />
+    <Property Name="ReceivedBy" Type="nvarchar" Nullable="false" MaxLength="255" />
+    <Property Name="ReceivedQty" Type="decimal" Nullable="false" Precision="18" Scale="2" />
+    <Property Name="RowVersion" Type="rowversion" Nullable="false" StoreGeneratedPattern="Computed" />
+    <Property Name="Receipt_PurchaseOrderLine" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PurchaseOrderStatus">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Status" Type="nvarchar" Nullable="false" MaxLength="20" />
+    <Property Name="IsLocked" Type="bit" Nullable="false" />
+    <Property Name="Seq" Type="int" Nullable="false" />
+    <Property Name="IsClosed" Type="bit" Nullable="false" />
+    <Property Name="IsOrdered" Type="bit" Nullable="false" />
+    <Property Name="FgColor" Type="nvarchar" MaxLength="255" />
+    <Property Name="BgColor" Type="nvarchar" MaxLength="255" />
+    <Property Name="RowVersion" Type="rowversion" Nullable="false" StoreGeneratedPattern="Computed" />
+    <Property Name="IsRevised" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AppSetting">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="GenericPOPrefix" Type="nvarchar" Nullable="false" MaxLength="255" />
+    <Property Name="DaysToAverageLastPurchasedCost" Type="int" Nullable="false" />
+    <Property Name="RowVersion" Type="rowversion" Nullable="false" StoreGeneratedPattern="Computed" />
+  </EntityType>
+  <EntityType Name="ProductCostRecord">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="DateApplied" Type="datetime" Nullable="false" />
+    <Property Name="Quantity" Type="nvarchar" MaxLength="255" />
+    <Property Name="JobNumber" Type="nvarchar" MaxLength="255" />
+    <Property Name="VendorId" Type="int" />
+    <Property Name="Username" Type="nvarchar" MaxLength="255" />
+    <Property Name="RowVersion" Type="rowversion" Nullable="false" StoreGeneratedPattern="Computed" />
+    <Property Name="ProductCostRecord_Product" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ProductGroup">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="RowVersion" Type="rowversion" Nullable="false" StoreGeneratedPattern="Computed" />
+    <Property Name="Seq" Type="int" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="20" />
+    <Property Name="Description" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="Release">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="RowVersion" Type="rowversion" Nullable="false" StoreGeneratedPattern="Computed" />
+    <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="20" />
+    <Property Name="Status" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ReleaseIssue">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="RowVersion" Type="rowversion" Nullable="false" StoreGeneratedPattern="Computed" />
+    <Property Name="DateCreated" Type="datetime" Nullable="false" />
+    <Property Name="CreatedBy" Type="nvarchar" Nullable="false" MaxLength="255" />
+    <Property Name="Screen" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="Problem" Type="nvarchar" Nullable="false" MaxLength="255" />
+    <Property Name="Notes" Type="nvarchar" MaxLength="255" />
+    <Property Name="Severity" Type="int" Nullable="false" />
+    <Property Name="IsFixed" Type="bit" Nullable="false" />
+    <Property Name="ReleaseIssue_Release" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Term">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="RowVersion" Type="rowversion" Nullable="false" StoreGeneratedPattern="Computed" />
+    <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="Explosion">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="RowVersion" Type="rowversion" Nullable="false" StoreGeneratedPattern="Computed" />
+    <Property Name="JobMasterBomId" Type="int" Nullable="false" />
+    <Property Name="Action" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="InvoiceStatus">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="RowVersion" Type="rowversion" Nullable="false" StoreGeneratedPattern="Computed" />
+    <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="25" />
+    <Property Name="Seq" Type="int" Nullable="false" />
+    <Property Name="ShowOnHomeScreen" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Invoice">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="RowVersion" Type="rowversion" Nullable="false" StoreGeneratedPattern="Computed" />
+    <Property Name="Number" Type="nvarchar" MaxLength="50" />
+    <Property Name="Amount" Type="decimal" Nullable="false" Precision="18" Scale="2" />
+    <Property Name="DateDue" Type="datetime" />
+    <Property Name="DateInvoiced" Type="datetime" />
+    <Property Name="Notes" Type="nvarchar" MaxLength="255" />
+    <Property Name="SearchTerms" Type="nvarchar" MaxLength="1000" />
+    <Property Name="Invoice_InvoiceStatus" Type="int" Nullable="false" />
+    <Property Name="Invoice_Job" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="Contact_Company">
+    <End Role="Company" Type="ApplicationDataStore.Company" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Contact" Type="ApplicationDataStore.Contact" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Company">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Contact">
+        <PropertyRef Name="Contact_Company" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Product_ProductType">
+    <End Role="ProductType" Type="ApplicationDataStore.ProductType" Multiplicity="1" />
+    <End Role="Product" Type="ApplicationDataStore.Product" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProductType">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Product">
+        <PropertyRef Name="Product_ProductType" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ProductAssemblyID">
+    <End Role="Product" Type="ApplicationDataStore.Product" Multiplicity="1" />
+    <End Role="BillOfMaterial" Type="ApplicationDataStore.BillOfMaterial" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Product">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="BillOfMaterial">
+        <PropertyRef Name="ProductAssemblyID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ComponentID">
+    <End Role="Product" Type="ApplicationDataStore.Product" Multiplicity="1" />
+    <End Role="BillOfMaterial" Type="ApplicationDataStore.BillOfMaterial" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Product">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="BillOfMaterial">
+        <PropertyRef Name="ComponentID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Product_Company">
+    <End Role="Company" Type="ApplicationDataStore.Company" Multiplicity="0..1" />
+    <End Role="Product" Type="ApplicationDataStore.Product" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Company">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Product">
+        <PropertyRef Name="Product_Company" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Job_Company">
+    <End Role="Company" Type="ApplicationDataStore.Company" Multiplicity="1" />
+    <End Role="Job" Type="ApplicationDataStore.Job" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Company">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Job">
+        <PropertyRef Name="Job_Company" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Job_JobStatus">
+    <End Role="JobStatus" Type="ApplicationDataStore.JobStatus" Multiplicity="1" />
+    <End Role="Job" Type="ApplicationDataStore.Job" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="JobStatus">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Job">
+        <PropertyRef Name="Job_JobStatus" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Job_Contact">
+    <End Role="Contact" Type="ApplicationDataStore.Contact" Multiplicity="0..1" />
+    <End Role="Job" Type="ApplicationDataStore.Job" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Contact">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Job">
+        <PropertyRef Name="Job_Contact" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="PurchaseOrder_Company">
+    <End Role="Company" Type="ApplicationDataStore.Company" Multiplicity="1" />
+    <End Role="PurchaseOrder" Type="ApplicationDataStore.PurchaseOrder" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Company">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="PurchaseOrder">
+        <PropertyRef Name="PurchaseOrder_Company" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="PurchaseOrder_Job">
+    <End Role="Job" Type="ApplicationDataStore.Job" Multiplicity="0..1" />
+    <End Role="PurchaseOrder" Type="ApplicationDataStore.PurchaseOrder" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Job">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="PurchaseOrder">
+        <PropertyRef Name="PurchaseOrder_Job" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="JobMasterBOM_Product">
+    <End Role="Product" Type="ApplicationDataStore.Product" Multiplicity="1" />
+    <End Role="JobMasterBOM" Type="ApplicationDataStore.JobMasterBOM" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Product">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="JobMasterBOM">
+        <PropertyRef Name="JobOrder_Product" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="JobMasterBOM_Job">
+    <End Role="Job" Type="ApplicationDataStore.Job" Multiplicity="1" />
+    <End Role="JobMasterBOM" Type="ApplicationDataStore.JobMasterBOM" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Job">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="JobMasterBOM">
+        <PropertyRef Name="JobOrder_Job" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="JobMasterBOMItem_Product">
+    <End Role="Product" Type="ApplicationDataStore.Product" Multiplicity="1" />
+    <End Role="JobMasterBOMItem" Type="ApplicationDataStore.JobMasterBOMItem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Product">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="JobMasterBOMItem">
+        <PropertyRef Name="JobOrderPart_Product" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="JobMasterBOMItem_JobMasterBOM">
+    <End Role="JobMasterBOM" Type="ApplicationDataStore.JobMasterBOM" Multiplicity="1" />
+    <End Role="JobMasterBOMItem" Type="ApplicationDataStore.JobMasterBOMItem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="JobMasterBOM">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="JobMasterBOMItem">
+        <PropertyRef Name="JobOrderPart_JobOrder" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="PurchaseOrderLine_PurchaseOrder">
+    <End Role="PurchaseOrder" Type="ApplicationDataStore.PurchaseOrder" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="PurchaseOrderLine" Type="ApplicationDataStore.PurchaseOrderLine" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PurchaseOrder">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="PurchaseOrderLine">
+        <PropertyRef Name="PurchaseOrderLine_PurchaseOrder" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="PurchaseOrderLine_Product">
+    <End Role="Product" Type="ApplicationDataStore.Product" Multiplicity="1" />
+    <End Role="PurchaseOrderLine" Type="ApplicationDataStore.PurchaseOrderLine" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Product">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="PurchaseOrderLine">
+        <PropertyRef Name="PurchaseOrderLine_Product" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Unit_Product">
+    <End Role="Unit" Type="ApplicationDataStore.Unit" Multiplicity="1" />
+    <End Role="Product" Type="ApplicationDataStore.Product" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Unit">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Product">
+        <PropertyRef Name="Unit_Product" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Receipt_PurchaseOrderLine">
+    <End Role="PurchaseOrderLine" Type="ApplicationDataStore.PurchaseOrderLine" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Receipt" Type="ApplicationDataStore.Receipt" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PurchaseOrderLine">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Receipt">
+        <PropertyRef Name="Receipt_PurchaseOrderLine" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="PurchaseOrder_PurchaseOrderStatus">
+    <End Role="PurchaseOrderStatus" Type="ApplicationDataStore.PurchaseOrderStatus" Multiplicity="1" />
+    <End Role="PurchaseOrder" Type="ApplicationDataStore.PurchaseOrder" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PurchaseOrderStatus">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="PurchaseOrder">
+        <PropertyRef Name="PurchaseOrder_PurchaseOrderStatus" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="JobMasterBOMItem_PurchaseOrderStatus">
+    <End Role="PurchaseOrderStatus" Type="ApplicationDataStore.PurchaseOrderStatus" Multiplicity="1" />
+    <End Role="JobMasterBOMItem" Type="ApplicationDataStore.JobMasterBOMItem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PurchaseOrderStatus">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="JobMasterBOMItem">
+        <PropertyRef Name="JobMasterBOMItem_PurchaseOrderStatus" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="JobMasterBOMItem_Company">
+    <End Role="Company" Type="ApplicationDataStore.Company" Multiplicity="0..1" />
+    <End Role="JobMasterBOMItem" Type="ApplicationDataStore.JobMasterBOMItem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Company">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="JobMasterBOMItem">
+        <PropertyRef Name="JobMasterBOMItem_Company" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ProductCostRecord_Product">
+    <End Role="Product" Type="ApplicationDataStore.Product" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="ProductCostRecord" Type="ApplicationDataStore.ProductCostRecord" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Product">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ProductCostRecord">
+        <PropertyRef Name="ProductCostRecord_Product" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Message_Job">
+    <End Role="Job" Type="ApplicationDataStore.Job" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Message" Type="ApplicationDataStore.Message" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Job">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Message">
+        <PropertyRef Name="Message_Job" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Product_ProductGroup">
+    <End Role="ProductGroup" Type="ApplicationDataStore.ProductGroup" Multiplicity="0..1" />
+    <End Role="Product" Type="ApplicationDataStore.Product" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProductGroup">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Product">
+        <PropertyRef Name="Product_ProductGroup" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ReleaseIssue_Release">
+    <End Role="Release" Type="ApplicationDataStore.Release" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="ReleaseIssue" Type="ApplicationDataStore.ReleaseIssue" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Release">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ReleaseIssue">
+        <PropertyRef Name="ReleaseIssue_Release" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Job_Contact1">
+    <End Role="Contact" Type="ApplicationDataStore.Contact" Multiplicity="0..1" />
+    <End Role="Job" Type="ApplicationDataStore.Job" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Contact">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Job">
+        <PropertyRef Name="Job_Contact1" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="PurchaseOrder_Contact">
+    <End Role="Contact" Type="ApplicationDataStore.Contact" Multiplicity="0..1" />
+    <End Role="PurchaseOrder" Type="ApplicationDataStore.PurchaseOrder" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Contact">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="PurchaseOrder">
+        <PropertyRef Name="PurchaseOrder_Contact" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Term_Job">
+    <End Role="Term" Type="ApplicationDataStore.Term" Multiplicity="0..1" />
+    <End Role="Job" Type="ApplicationDataStore.Job" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Term">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Job">
+        <PropertyRef Name="Term_Job" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Invoice_InvoiceStatus">
+    <End Role="InvoiceStatus" Type="ApplicationDataStore.InvoiceStatus" Multiplicity="1" />
+    <End Role="Invoice" Type="ApplicationDataStore.Invoice" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="InvoiceStatus">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Invoice">
+        <PropertyRef Name="Invoice_InvoiceStatus" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Invoice_Job">
+    <End Role="Job" Type="ApplicationDataStore.Job" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Invoice" Type="ApplicationDataStore.Invoice" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Job">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Invoice">
+        <PropertyRef Name="Invoice_Job" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

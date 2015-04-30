@@ -1,0 +1,27 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{8A4D642E-824A-4D58-BD56-648CC30C8F17}") = "ImperialBOM", "ImperialBOM\ImperialBOM.ls3proj", "{79E7B025-4D38-42EB-9498-E74BF48D8DC2}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{79E7B025-4D38-42EB-9498-E74BF48D8DC2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{79E7B025-4D38-42EB-9498-E74BF48D8DC2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{79E7B025-4D38-42EB-9498-E74BF48D8DC2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{79E7B025-4D38-42EB-9498-E74BF48D8DC2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DA38DBE0-C664-488C-93FE-137BBC082832}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DA38DBE0-C664-488C-93FE-137BBC082832}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DA38DBE0-C664-488C-93FE-137BBC082832}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DA38DBE0-C664-488C-93FE-137BBC082832}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B360B7A1-C325-4BBC-8FF6-0563DB484866}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B360B7A1-C325-4BBC-8FF6-0563DB484866}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B360B7A1-C325-4BBC-8FF6-0563DB484866}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B360B7A1-C325-4BBC-8FF6-0563DB484866}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

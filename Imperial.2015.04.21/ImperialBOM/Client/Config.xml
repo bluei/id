@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Configuration>
+  <Manifests>
+    <Manifest>Microsoft.LightSwitch.Base.Client.Manifest.xml</Manifest>
+    <Manifest>Microsoft.LightSwitch.Client.Internal.Manifest.xml</Manifest>
+    <Manifest>Microsoft.LightSwitch.Model.Xaml.Client.Manifest.xml</Manifest>
+  </Manifests>
+  <SubsystemPackages>
+    <SubsystemPackage>ModelLoader</SubsystemPackage>
+    <SubsystemPackage>RuntimeExtensionLoader</SubsystemPackage>
+    <SubsystemPackage>PresentationRuntimeLoader</SubsystemPackage>
+    <SubsystemPackage>ReportingLoader</SubsystemPackage>
+    <SubsystemPackage>RulesLoader</SubsystemPackage>
+    <SubsystemPackage>RuntimeServicesLoader</SubsystemPackage>
+    <SubsystemPackage>RuntimeShellLoader</SubsystemPackage>
+    <SubsystemPackage>ThemingRuntimeLoader</SubsystemPackage>
+    <SubsystemPackage>UtilitiesLoader</SubsystemPackage>
+    <SubsystemPackage>BaseServicesLoader</SubsystemPackage>
+    <SubsystemPackage>DiagnosticsLoader</SubsystemPackage>
+    <SubsystemPackage>RuntimeUserCodeLoader</SubsystemPackage>
+  </SubsystemPackages>
+  <UserCodeAssemblies></UserCodeAssemblies>
+  <ExtensionAssemblies>
+    <ExtensionAssembly>Microsoft.LightSwitch.SDKProxy, Version=10.0.11.3, Culture=neutral, PublicKeyToken=31bf3856ad364e35</ExtensionAssembly>
+    <ExtensionAssembly>Microsoft.LightSwitch.Extensions.Client, Version=11.0.0.0, Culture=neutral, PublicKeyToken=31BF3856AD364E35</ExtensionAssembly>
+    <ExtensionAssembly>VS11MyDefault2012ShellTop.Client, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</ExtensionAssembly>
+    <ExtensionAssembly>VS11MyDefault2012ShellTop.Common, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</ExtensionAssembly>
+    <ExtensionAssembly>System.Windows.Controls.Input.Toolkit, Version=5.0.5.0, Culture=neutral, PublicKeyToken=31BF3856AD364E35</ExtensionAssembly>
+    <ExtensionAssembly>System.Windows.Controls.Toolkit, Version=5.0.5.0, Culture=neutral, PublicKeyToken=31BF3856AD364E35</ExtensionAssembly>
+    <ExtensionAssembly>System.Xml.Serialization, Version=5.0.5.0, Culture=neutral, PublicKeyToken=31BF3856AD364E35</ExtensionAssembly>
+    <ExtensionAssembly>System.Windows.Controls.Toolkit.Internals, Version=4.0.5.0, Culture=neutral, PublicKeyToken=31BF3856AD364E35</ExtensionAssembly>
+    <ExtensionAssembly>System.ServiceModel.DomainServices.Client.Web, Version=2.0.5.0, Culture=neutral, PublicKeyToken=31BF3856AD364E35</ExtensionAssembly>
+    <ExtensionAssembly>DevExpress.Data.v12.1, Version=12.1.9.5, Culture=neutral, PublicKeyToken=B88D1754D700E49A</ExtensionAssembly>
+    <ExtensionAssembly>DevExpress.Printing.v12.1.Core, Version=12.1.9.5, Culture=neutral, PublicKeyToken=B88D1754D700E49A</ExtensionAssembly>
+    <ExtensionAssembly>DevExpress.Xpf.Printing.v12.1.Core, Version=12.1.9.5, Culture=neutral, PublicKeyToken=B88D1754D700E49A</ExtensionAssembly>
+    <ExtensionAssembly>DevExpress.Xpf.Printing.v12.1, Version=12.1.9.5, Culture=neutral, PublicKeyToken=B88D1754D700E49A</ExtensionAssembly>
+    <ExtensionAssembly>DevExpress.Xpf.Core.v12.1, Version=12.1.9.5, Culture=neutral, PublicKeyToken=B88D1754D700E49A</ExtensionAssembly>
+    <ExtensionAssembly>DevExpress.Xpf.Layout.v12.1.Core, Version=12.1.9.5, Culture=neutral, PublicKeyToken=B88D1754D700E49A</ExtensionAssembly>
+    <ExtensionAssembly>DevExpress.Xpf.Docking.v12.1, Version=12.1.9.5, Culture=neutral, PublicKeyToken=B88D1754D700E49A</ExtensionAssembly>
+    <ExtensionAssembly>DevExpress.XtraReports.v12.1.LightSwitch.Common, Version=12.1.9.5, Culture=neutral, PublicKeyToken=B88D1754D700E49A</ExtensionAssembly>
+    <ExtensionAssembly>DevExpress.XtraReports.v12.1.LightSwitch.Client, Version=12.1.9.5, Culture=neutral, PublicKeyToken=B88D1754D700E49A</ExtensionAssembly>
+    <ExtensionAssembly>Luminous.Commands.Client, Version=1.1.0.0, Culture=neutral, PublicKeyToken=null</ExtensionAssembly>
+    <ExtensionAssembly>Luminous.Commands.Common, Version=1.1.0.0, Culture=neutral, PublicKeyToken=null</ExtensionAssembly>
+    <ExtensionAssembly>PixataCustomControls.Client, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</ExtensionAssembly>
+    <ExtensionAssembly>PixataCustomControls.Common, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</ExtensionAssembly>
+  </ExtensionAssemblies>
+</Configuration>
