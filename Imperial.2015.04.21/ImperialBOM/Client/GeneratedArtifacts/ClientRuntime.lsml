@@ -309,7 +309,7 @@
     <Application.NavigationItems>
       <ApplicationNavigationGroup
         Name="group"
-        DefaultItem="!module/NavigationItems[group]/Children[PurchaseOrderReceiving]">
+        DefaultItem="!module/NavigationItems[group]/Children[link10]">
         <ApplicationNavigationGroup.Attributes>
           <DisplayName
             Value="Search" />
@@ -25863,7 +25863,8 @@
           View="Microsoft.LightSwitch.RichClient:ColumnsLayout">
           <ContentItem
             Name="ListColumn"
-            Kind="Group">
+            Kind="Group"
+            View="Microsoft.LightSwitch.RichClient:RowsLayout">
             <ContentItem
               Name="OpenPurchaseOrders"
               Kind="Collection"
@@ -26066,6 +26067,14 @@
                       ResultType=":Boolean" />
                   </ScreenExpressionTree>
                 </ControlPropertySource>
+                <ControlPropertySource
+                  Property="Microsoft.LightSwitch.RichClient:RootControl/Properties[AttachedLabelPosition]">
+                  <ScreenExpressionTree>
+                    <ConstantExpression
+                      Value="Collapsed"
+                      ResultType=":String" />
+                  </ScreenExpressionTree>
+                </ControlPropertySource>
               </ContentItem.PropertySources>
             </ContentItem>
             <ContentItem.PropertySources>
@@ -26083,6 +26092,22 @@
                   <ConstantExpression
                     Value="True"
                     ResultType=":Boolean" />
+                </ScreenExpressionTree>
+              </ControlPropertySource>
+              <ControlPropertySource
+                Property="PixataCustomControls:ExpandablePanel/Properties[ExpandOnCreated]">
+                <ScreenExpressionTree>
+                  <ConstantExpression
+                    Value="True"
+                    ResultType=":Boolean" />
+                </ScreenExpressionTree>
+              </ControlPropertySource>
+              <ControlPropertySource
+                Property="PixataCustomControls:ExpandablePanel/Properties[ExpandedWidth]">
+                <ScreenExpressionTree>
+                  <ConstantExpression
+                    Value="400"
+                    ResultType=":Int32" />
                 </ScreenExpressionTree>
               </ControlPropertySource>
               <ControlPropertySource
@@ -26443,6 +26468,10 @@
               IsHidden="True"
               Kind="Group"
               View="Microsoft.LightSwitch.RichClient:ModalWindow">
+              <ContentItem.Attributes>
+                <DisplayName
+                  Value="Receipts for Selected PO Line" />
+              </ContentItem.Attributes>
               <ContentItem
                 Name="Receipts"
                 Kind="Collection"
