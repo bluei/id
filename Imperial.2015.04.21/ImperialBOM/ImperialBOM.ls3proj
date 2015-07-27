@@ -21,7 +21,7 @@
     <RequireSecureConnection>False</RequireSecureConnection>
     <AuthenticationType>Forms</AuthenticationType>
     <ApplicationName>ImperialBOM</ApplicationName>
-    <AssemblyVersion>1.5.84.0</AssemblyVersion>
+    <AssemblyVersion>1.5.87.0</AssemblyVersion>
     <ServiceDefinitionFile>ServiceDefinition.csdef</ServiceDefinitionFile>
     <ServiceConfigurationFile>ServiceConfiguration.cscfg</ServiceConfigurationFile>
     <SqlExpressInstanceName>(LocalDB)\v11.0</SqlExpressInstanceName>
@@ -32,7 +32,7 @@
     <BootstrapperComponentsUrl />
     <DefaultInstallLocation>ImperialBOM</DefaultInstallLocation>
     <DeploySchema>False</DeploySchema>
-    <PublishLocation>\\192.168.0.250\PublishProd\ImperialBOM\</PublishLocation>
+    <PublishLocation>F:\test</PublishLocation>
     <PublishNewDatabase>False</PublishNewDatabase>
     <PublishUrl />
     <PublishSite>Default Web Site/ImperialBOM</PublishSite>

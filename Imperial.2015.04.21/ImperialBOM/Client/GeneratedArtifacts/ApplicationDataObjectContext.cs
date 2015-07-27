@@ -9,7 +9,7 @@
 //------------------------------------------------------------------------------
 
 // Original file name:
-// Generation date: 6/8/2015 12:04:53 AM
+// Generation date: 6/16/2015 12:35:00 PM
 namespace LightSwitchApplication.Implementation
 {
     

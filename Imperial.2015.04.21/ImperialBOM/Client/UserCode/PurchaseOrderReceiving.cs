@@ -61,6 +61,5 @@ namespace LightSwitchApplication
             this.OpenModalWindow("ReceiptsGroup");
         }
 
-
     }
 }

@@ -10,6 +10,7 @@ namespace LightSwitchApplication
         partial void PurchaseOrder_Created()
         {
             POCreatedDate = DateTime.Now;
+            DateOrdered = DateTime.Now;
             CreatedBy = this.Application.User.FullName;
             this.PurchaseOrderStatus = this.DataWorkspace.ApplicationData.PurchaseOrderStatuses.OrderBy(ps => ps.Seq).FirstOrDefault();
         }
