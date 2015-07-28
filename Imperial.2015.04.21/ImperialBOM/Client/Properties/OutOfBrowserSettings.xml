@@ -1,7 +1,7 @@
 ﻿<OutOfBrowserSettings ShortName="ImperialBOM_Test" EnableGPUAcceleration="False" ShowInstallMenuItem="False">
   <OutOfBrowserSettings.Blurb>ImperialBOM</OutOfBrowserSettings.Blurb>
   <OutOfBrowserSettings.WindowSettings>
-    <WindowSettings Title="ImperialBOM_Test" />
+    <WindowSettings Title="ImperialBOM_Prod" />
   </OutOfBrowserSettings.WindowSettings>
   <OutOfBrowserSettings.SecuritySettings>
     <SecuritySettings ElevatedPermissions="NotRequired" />
