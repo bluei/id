@@ -14012,6 +14012,16 @@
                         ResultType=":String" />
                     </ScreenExpressionTree>
                   </ControlPropertySource>
+                  <ControlPropertySource
+                    Property="Microsoft.LightSwitch.RichClient:RootControl/Properties[AttachedLabelPosition]">
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <ConstantExpression
+                          Value="LeftAligned"
+                          ResultType=":String" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ControlPropertySource>
                 </ContentItem.PropertySources>
               </ContentItem>
               <ContentItem
