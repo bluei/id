@@ -98,10 +98,11 @@ namespace LightSwitchApplication
                     try
                     {
                         this.FindControl("ComponentsTab").Focus();
+                        // THIS LINE ERRORS OUT WHEN THE Detail screen is called a second time - not sure why
                     }
                     catch (Exception ex)
                     {
-                        this.ShowMessageBox(ex.ToString());
+                        // var err = ex.ToString();
                     }
                 }
                 else

@@ -4,7 +4,7 @@
     <WindowSettings Title="ImperialBOM" />
   </OutOfBrowserSettings.WindowSettings>
   <OutOfBrowserSettings.SecuritySettings>
-    <SecuritySettings ElevatedPermissions="Required" />
+    <SecuritySettings ElevatedPermissions="NotRequired" />
   </OutOfBrowserSettings.SecuritySettings>
   <OutOfBrowserSettings.Icons>
     <Icon Size="32,32">Resources/Binary-tree32b.png</Icon>
