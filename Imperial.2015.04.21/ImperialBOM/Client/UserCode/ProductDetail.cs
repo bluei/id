@@ -97,7 +97,7 @@ namespace LightSwitchApplication
                     this.FindControl("ComponentsTab").IsVisible = true;
                     try
                     {
-                        // this.FindControl("ComponentsTab").Focus();
+                         this.FindControl("ComponentsTab").Focus();
                         // THIS LINE ERRORS OUT WHEN THE Detail screen is called a second time - not sure why
                     }
                     catch (Exception ex)
