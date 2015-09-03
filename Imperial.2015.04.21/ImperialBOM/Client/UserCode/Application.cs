@@ -31,12 +31,12 @@ namespace LightSwitchApplication
                         var item = this.CreateDataWorkspace().ApplicationData.Explosions.FirstOrDefault();
                     });
 
-                }, null, 15000, 30000);
+                }, null, 15000, 300000);
             }
         }
         partial void Application_Initialize()
         {
-            this.Details.ClientTimeout = 60*20;
+            this.Details.ClientTimeout = 100000;
         }
         public class BOMPreviewItem     // Used to hold list of Exploded BOM for ProductDisplayString 
         {
