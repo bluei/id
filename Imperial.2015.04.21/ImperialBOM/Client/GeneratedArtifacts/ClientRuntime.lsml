@@ -8125,10 +8125,9 @@
       </ScreenProperty>
       <ScreenCollectionProperty
         Name="BOMComponents"
-        DisablePaging="True"
         DisableSearch="True"
         DisableSorting="True"
-        PageSize="45"
+        PageSize="100"
         PropertyType="CollectionView$BillOfMaterial">
         <ScreenCollectionProperty.Query>
           <ScreenQueryDefinition
@@ -8178,7 +8177,7 @@
       </ScreenCollectionProperty>
       <ScreenCollectionProperty
         Name="BOMsUsedIn"
-        PageSize="20"
+        PageSize="50"
         PropertyType="CollectionView$BillOfMaterial">
         <ScreenCollectionProperty.Query>
           <ScreenQueryDefinition
@@ -26771,9 +26770,8 @@
     <Screen.Properties>
       <ScreenCollectionProperty
         Name="OpenPurchaseOrders"
-        DisablePaging="True"
         DisableSearch="True"
-        PageSize="45"
+        PageSize="100"
         PropertyType="CollectionView$PurchaseOrder">
         <ScreenCollectionProperty.Query>
           <ScreenQueryDefinition
@@ -26832,9 +26830,7 @@
       </ScreenCollectionProperty>
       <ScreenCollectionProperty
         Name="PurchaseOrderLines"
-        DisablePaging="True"
-        DisableSearch="True"
-        PageSize="45"
+        PageSize="100"
         PropertyType="CollectionView$PurchaseOrderLine">
         <ScreenCollectionProperty.Query>
           <ScreenQueryDefinition

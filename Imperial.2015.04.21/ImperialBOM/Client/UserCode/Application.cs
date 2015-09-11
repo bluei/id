@@ -18,22 +18,22 @@ namespace LightSwitchApplication
     public partial class Application
     {
         private DataGrid _myGrid;
-        private Timer _timer;
-        partial void Application_LoggedIn()
-        {
+        //private Timer _timer;
+        //partial void Application_LoggedIn()
+        //{
 
-            if (_timer == null)
-            {
-                _timer = new Timer(x =>
-                {
-                    this.Details.Dispatcher.BeginInvoke(() =>
-                    {
-                        var item = this.CreateDataWorkspace().ApplicationData.Explosions.FirstOrDefault();
-                    });
+        //    if (_timer == null)
+        //    {
+        //        _timer = new Timer(x =>
+        //        {
+        //            this.Details.Dispatcher.BeginInvoke(() =>
+        //            {
+        //                var item = this.CreateDataWorkspace().ApplicationData.Explosions.FirstOrDefault();
+        //            });
 
-                }, null, 15000, 300000);
-            }
-        }
+        //        }, null, 15000, 300000);
+        //    }
+        //}
         partial void Application_Initialize()
         {
             this.Details.ClientTimeout = 100000;
