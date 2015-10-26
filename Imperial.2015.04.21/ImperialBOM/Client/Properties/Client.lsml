@@ -22276,7 +22276,7 @@
       </ScreenCollectionProperty>
       <ScreenCollectionProperty
         Name="PurchaseOrderLines"
-        PageSize="100"
+        PageSize="50"
         PropertyType="CollectionView$PurchaseOrderLine">
         <ScreenCollectionProperty.Query>
           <ScreenQueryDefinition
