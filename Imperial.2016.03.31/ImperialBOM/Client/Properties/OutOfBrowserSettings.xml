@@ -1,0 +1,12 @@
+﻿<OutOfBrowserSettings ShortName="ImperialBOM" EnableGPUAcceleration="False" ShowInstallMenuItem="False">
+  <OutOfBrowserSettings.Blurb>ImperialBOM</OutOfBrowserSettings.Blurb>
+  <OutOfBrowserSettings.WindowSettings>
+    <WindowSettings Title="ImperialBOM" />
+  </OutOfBrowserSettings.WindowSettings>
+  <OutOfBrowserSettings.SecuritySettings>
+    <SecuritySettings ElevatedPermissions="Required" />
+  </OutOfBrowserSettings.SecuritySettings>
+  <OutOfBrowserSettings.Icons>
+    <Icon Size="32,32">Resources/Binary-tree32b.png</Icon>
+  </OutOfBrowserSettings.Icons>
+</OutOfBrowserSettings>
