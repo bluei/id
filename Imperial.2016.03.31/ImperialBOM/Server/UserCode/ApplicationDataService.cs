@@ -567,6 +567,10 @@ namespace LightSwitchApplication
                                 if (jmbi.ExtendedQty.GetValueOrDefault() != jmbi.ExtendedQtyRegenerated.GetValueOrDefault())
                                     jmbi.Note += string.Format("■■ BOM Extended Qty is now {0}", jmbi.ExtendedQtyRegenerated.GetValueOrDefault());
                                 jmbi.Note += " ■■";
+                                if (jmbi.Note.Length > 255)
+                                {
+                                    jmbi.Note = jmbi.Note.Substring(0, 250);
+                                }
                                 jmbiAdded.Processed = true;
                                 jmbiAdded.Delete();
                             }

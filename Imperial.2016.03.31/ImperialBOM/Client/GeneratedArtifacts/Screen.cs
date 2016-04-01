@@ -817,10 +817,8 @@ namespace LightSwitchApplication
                 }
 
                 return global::Microsoft.LightSwitch.DataServiceQueryable.Include(
-                    global::Microsoft.LightSwitch.DataServiceQueryable.ThenBy(
-                        global::Microsoft.LightSwitch.DataServiceQueryable.OrderBy(
-                            loader,
-                            (b) => b.BOMComponentID.ProductGroup.Seq),
+                    global::Microsoft.LightSwitch.DataServiceQueryable.OrderBy(
+                        loader,
                         (b) => b.BOMComponentID.PartNumber),
                     "BOMComponentID");
             }
@@ -6427,10 +6425,8 @@ namespace LightSwitchApplication
                 }
 
                 return global::Microsoft.LightSwitch.DataServiceQueryable.Include(
-                    global::Microsoft.LightSwitch.DataServiceQueryable.ThenBy(
-                        global::Microsoft.LightSwitch.DataServiceQueryable.OrderBy(
-                            loader,
-                            (p) => p.Product.ProductGroup.Seq),
+                    global::Microsoft.LightSwitch.DataServiceQueryable.OrderBy(
+                        loader,
                         (p) => p.Product.PartNumber),
                     "Product");
             }
